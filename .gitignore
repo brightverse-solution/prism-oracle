@@ -39,6 +39,9 @@ lancedb/
 .turbo/
 .vite/
 
+# Svelte
+.svelte-kit/
+
 # Test coverage
 coverage/
 .nyc_output/

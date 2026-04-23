@@ -1,0 +1,12 @@
+{
+  "company": {
+    "name": "Brightverse Solution Co., Ltd.",
+    "address": [
+      "123 Example Road",
+      "Khlong Toei, Bangkok 10110",
+      "Thailand"
+    ],
+    "phone": "+66-2-xxx-xxxx",
+    "taxId": "0-0000-00000-00-0"
+  }
+}

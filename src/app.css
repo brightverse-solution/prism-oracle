@@ -1,0 +1,44 @@
+:root {
+  --prism-bg: #f8fafc;
+  --prism-surface: #ffffff;
+  --prism-ink: #111827;
+  --prism-muted: #6b7280;
+  --prism-header-bg: #1f2937;
+  --prism-header-text: #ffffff;
+  --prism-totals-bg: #f3f4f6;
+  --prism-grand-bg: #d1d5db;
+  --prism-border: #d1d5db;
+  --prism-accent: #f59e0b;
+  --prism-edit-hover: #fef3c7;
+  --prism-edit-focus: #fff7ed;
+  --prism-error-bg: #fee2e2;
+  --prism-error-text: #991b1b;
+  --prism-font:
+    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--prism-bg);
+  color: var(--prism-ink);
+  font-family: var(--prism-font);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#app {
+  min-height: 100%;
+}
+
+button {
+  font-family: inherit;
+}
