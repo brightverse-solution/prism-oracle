@@ -1,15 +1,15 @@
 {
   "name": "prism-oracle",
   "version": "0.1.0",
-  "description": "PRISM Oracle 🎨 — Frontend quotation preview (refracts FORGE's xlsx into a browser page)",
+  "description": "PRISM Oracle 🎨 — Frontend Dev Oracle. Monorepo of browser-facing tools.",
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "bun test ./tests/*.test.ts",
-    "typecheck": "svelte-check --tsconfig ./tsconfig.json && tsc --noEmit -p tsconfig.node.json",
+    "dev": "vite tools/quote-preview",
+    "build": "vite build tools/quote-preview",
+    "preview": "vite preview tools/quote-preview",
+    "test": "bun test ./tools/**/tests/*.test.ts",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.json",
     "lint": "biome check .",
     "format": "biome format --write ."
   },

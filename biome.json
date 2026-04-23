@@ -29,7 +29,8 @@
       "node_modules",
       "dist",
       ".svelte-kit",
-      "examples/*.xlsx",
+      "tools/**/dist",
+      "tools/**/examples/*.xlsx",
       "ψ/**",
       "*.svelte"
     ]

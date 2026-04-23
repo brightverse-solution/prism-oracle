@@ -19,5 +19,9 @@
     "noEmit": true,
     "allowImportingTsExtensions": true
   },
-  "include": ["src/**/*.ts", "src/**/*.svelte", "tests/**/*.ts"]
+  "include": [
+    "tools/**/src/**/*.ts",
+    "tools/**/src/**/*.svelte",
+    "tools/**/tests/**/*.ts"
+  ]
 }
