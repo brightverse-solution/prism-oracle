@@ -4,16 +4,19 @@
   import { CsvParseError, parseCsv } from './lib/csv';
   import { computeLines, computeTotals } from './lib/quote';
   import { createBrowserCounter } from './lib/quote-number';
-  import type { ComputedLine, Quote, QuoteTotals } from './lib/types';
+  import type { Company, ComputedLine, Quote, QuoteTotals } from './lib/types';
   import { downloadXlsx, generateQuoteXlsxBuffer } from './lib/xlsx';
+  import fixtureData from '../examples/fixture.json';
 
   const config = loadConfig();
   const counter = createBrowserCounter();
 
-  let lines: ComputedLine[] = $state([]);
-  let quoteNumber: string = $state('');
-  let quoteDate: Date = $state(new Date());
-  let customer: string = $state('');
+  // Auto-load FORGE's fixture on startup — renders without user interaction
+  let lines: ComputedLine[] = $state(fixtureData.items as ComputedLine[]);
+  let quoteNumber: string = $state(fixtureData.quoteNumber);
+  let quoteDate: Date = $state(new Date(fixtureData.date as string));
+  let customer: string = $state(fixtureData.customer ?? '');
+  let company: Company = $state(fixtureData.company as Company);
   let errorMessage: string | null = $state(null);
   let isDragging: boolean = $state(false);
   let isDownloading: boolean = $state(false);
@@ -24,6 +27,7 @@
     lines = [];
     quoteNumber = '';
     customer = '';
+    company = config.company;
     errorMessage = null;
   }
 
@@ -36,6 +40,7 @@
       lines = computeLines(items);
       quoteNumber = counter.next(now);
       quoteDate = now;
+      company = config.company;
     } catch (e) {
       errorMessage = e instanceof CsvParseError ? e.message : `Unexpected error: ${String(e)}`;
       lines = [];
@@ -74,7 +79,7 @@
         quoteNumber,
         date: quoteDate,
         customer: customer.trim() || null,
-        company: config.company,
+        company,
         items: lines,
         totals,
       };
@@ -145,7 +150,7 @@
     </section>
   {:else if totals}
     <Quotation
-      company={config.company}
+      {company}
       {quoteNumber}
       quoteDate={quoteDate}
       bind:customer

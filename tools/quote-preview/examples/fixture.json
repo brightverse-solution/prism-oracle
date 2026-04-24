@@ -1,0 +1,44 @@
+{
+  "quoteNumber": "Q-20260424-001",
+  "date": "2026-04-24T00:00:00.000Z",
+  "customer": null,
+  "company": {
+    "name": "Brightverse Solution Co., Ltd.",
+    "address": [
+      "123 Sample Street",
+      "Pathum Wan, Bangkok 10330",
+      "Thailand"
+    ],
+    "phone": "+66-2-000-0000",
+    "taxId": "0-0000-00000-00-0"
+  },
+  "items": [
+    {
+      "index": 1,
+      "product": "Widget A",
+      "quantity": 10,
+      "price": 150.00,
+      "lineTotal": 1500.00
+    },
+    {
+      "index": 2,
+      "product": "Widget B",
+      "quantity": 5,
+      "price": 300.00,
+      "lineTotal": 1500.00
+    },
+    {
+      "index": 3,
+      "product": "Consulting (hours)",
+      "quantity": 8,
+      "price": 2500.00,
+      "lineTotal": 20000.00
+    }
+  ],
+  "totals": {
+    "subtotal": 23000.00,
+    "vatRate": 0.07,
+    "vat": 1610.00,
+    "grandTotal": 24610.00
+  }
+}
